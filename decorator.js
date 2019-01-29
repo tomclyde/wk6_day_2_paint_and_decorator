@@ -29,16 +29,16 @@ Decorator.prototype.hasEnoughPaint = function(room) {
 
 Decorator.prototype.removePaint = function(room)  {
   if (room.area <= this.calcTotalLitres()){
-    let amount_we_have = this.calcTotalLitres();
     let amount_needed = room.area;
-    
-
-  }
+    for (var i = 1; i <= amount_needed; i++){
+      this.stock.pop();
+    } //end for
+  } //end if
   else {
-    return false
-  }
-}
+    return "not enough paint"
+  } //end else
+} //end func
 
-}
+
 
 module.exports = Decorator;

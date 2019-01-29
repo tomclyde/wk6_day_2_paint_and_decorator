@@ -57,4 +57,13 @@ describe("Decorator", function() {
     assert.strictEqual(actual, true);
   });
 
+  it('reduce stock to correct amount', function () {
+    decorator2.addcan(can1);
+    decorator2.addcan(can2);
+    decorator2.addcan(can3);
+    decorator2.removePaint(room2);
+    actual = decorator2.calcTotalLitres();
+    assert.strictEqual(actual, 1);
+  });
+
 });
